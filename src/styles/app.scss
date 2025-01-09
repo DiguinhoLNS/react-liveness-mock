@@ -1,0 +1,359 @@
+/*******************************************************
+	* - V1
+*******************************************************/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+	font-family: -apple-system, 'Google Sans', 'Roboto', sans-serif;
+	font-style: normal;
+}
+
+/*******************************************************
+	Link - V5
+*******************************************************/
+
+a {		
+	border: none;
+	outline: none;
+
+	color: none;
+	text-decoration: none;
+
+	cursor: pointer;
+
+    &:link, :active, :visited, :hover, :focus {
+        border: none;
+        outline: none;
+    
+        color: none;
+        text-decoration: none;
+    }
+
+}
+
+/*******************************************************
+	Input - V3
+*******************************************************/
+
+input, textarea {
+	border: none;
+	outline: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:-webkit-autofill {
+        transition: color 9999s ease-out, background-color 9999s ease-out;
+        transition-delay: 9999s;
+        -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+        -webkit-transition-delay: 9999s;
+
+        &:hover, &:focus, &:active {
+            transition: color 9999s ease-out, background-color 9999s ease-out;
+            transition-delay: 9999s;
+            -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+            -webkit-transition-delay: 9999s;
+        }
+        
+    }
+
+}
+
+select {
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+/*******************************************************
+	Image - V2
+*******************************************************/
+
+img {
+	width: 100%;
+	height: auto;
+    vertical-align: top;
+
+    font-size: 14px;
+}
+
+/*******************************************************
+	Text - V4
+*******************************************************/
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+
+	font-weight: normal;
+}
+
+/*******************************************************
+	List - V1
+*******************************************************/
+
+ul, li {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+/*******************************************************
+	Button - V1
+*******************************************************/
+
+button {
+	border: none;
+
+    &:hover, &:focus {
+        outline: none;
+    }
+
+}
+
+/*******************************************************
+	Table - V1
+*******************************************************/
+
+.tableContainer.custom {
+    border: 2px solid var(--color-divider);
+
+    overflow-x: auto;
+}
+
+table.custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    tr {
+        width: 100%;
+
+        th, td {
+            padding: 8px;
+            border-right: 2px solid var(--color-divider);
+            border-bottom: 2px solid var(--color-divider);
+
+            color: var(--color-text-t);
+
+            &:last-of-type {
+                border-right: 0;
+            }
+
+        }
+        
+        th {
+            // border-top: 2px solid var(--color-divider);
+
+            font-size: 18px;
+            font-weight: bold;
+            /*
+            &:first-child {
+                border-left: 2px solid var(--color-divider);
+            }
+
+            &:first-child, &:last-child {
+                border-top: 2px solid var(--color-divider);
+            }
+            */
+        }
+        /*
+        td {
+            
+            &:first-child {
+                border-left: 2px solid var(--color-divider);
+            }
+
+        }
+        
+        &:first-child th {
+
+            &:first-child {
+                border-top-left-radius: 6px;
+            }
+    
+            :last-child {
+                border-top-right-radius: 6px;
+            }
+
+        }
+
+        &:last-child td {
+
+            &:first-child {
+                border-bottom-left-radius: 6px;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: 6px;
+            }
+
+        }
+        */
+    }
+
+}
+
+/*******************************************************
+	Elements
+*******************************************************/
+
+html, body, header, main, footer, section,
+#root, #wrapper,
+#headerContainer, #mainContainer, #footerContainer, .sectionContainer {
+    width: 100%;
+
+    transition: var(--transition-theme);
+}
+body {
+    background-color: var(--color-layout-foreground);
+}
+
+/*******************************************************
+	Transitions
+*******************************************************/
+
+svg path {
+    transition: var(--transition-theme) !important;
+}
+
+/*******************************************************
+	Glass
+*******************************************************/
+
+.glass {
+    background: var(--color-layout-glass-p);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition: var(--transition-theme);
+}
+
+.softGlass {
+    background: var(--color-layout-glass-p);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+
+    transition: var(--transition-theme);
+
+    &.fadeHover:hover {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+}
+
+/*******************************************************
+	Marker
+*******************************************************/
+
+.customMarkerIcon {
+
+    &.position {
+
+        i {
+            margin: 12px auto;
+
+            font-size: 12px !important;
+            font-weight: bold;
+        }
+
+    }
+
+    .markerPin {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        width: 30px;
+        height: 30px;
+        margin: -15px 0 0 -15px;
+        border-radius: 50% 50% 50% 0;
+
+        transform: rotate(-45deg);
+    
+        &::after {
+            content: '';
+
+            position: absolute;
+
+            width: 24px;
+            height: 24px;
+            margin: 3px 0 0 3px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+    }
+      
+    i {
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        width: 22px;
+        margin: 10px auto;
+
+        color: var(--color-txt-p-lm);
+        font-size: 22px;
+        text-align: center;
+    }
+
+}
+
+/*******************************************************
+	Scroll
+*******************************************************/
+
+@mixin scrollPattern {
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 6px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: rgba(0,0,0,0.4); 
+
+        &:hover {
+            background: rgba(0,0,0,0.6); 
+        }
+
+    }
+
+}
+
+.scroll {
+    @include scrollPattern;
+
+    overflow: auto;
+}
+
+.overlayScroll {
+    @include scrollPattern;
+
+    overflow: overlay !important;
+
+    &:hover {
+        overflow: overlay !important;
+    }
+}
+
+@supports not (overflow: overlay) {
+
+    .scroll {
+        overflow: auto !important;
+    }
+    
+}
