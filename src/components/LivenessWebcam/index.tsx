@@ -14,9 +14,8 @@ const LivenessWebcam: React.FC = () => {
     const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null)
     const [countdown, setCountdown] = useState<number | null>(null)
 
-    const size = 100
-    const width = 3 * size
-    const height = 4 * size
+    const width = Math.min(window.innerWidth - 32, 500)
+    const height = (width / 3) * 4
 
     const MIN_BOX_SIZE = 0.5
     const MAX_CENTER_OFFSET = 0.4
@@ -147,8 +146,6 @@ const LivenessWebcam: React.FC = () => {
                         forceScreenshotSourceSize
                         screenshotFormat = "image/jpeg"
                         style = {{
-                            height,
-                            width,
                             position: 'absolute',
                         }}
                     />
